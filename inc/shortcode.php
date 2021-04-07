@@ -9,7 +9,8 @@ function custom_app_form_shortcode( $atts ) {
 	$atts = shortcode_atts( array(
 		'amount' => 1,
 	), $atts, 'custom-app-form' );
-
+	
+ 	ob_start();
 	?>
     <h1>Cryptocurrency Converter Calculator</h1>
     <form id="cryptocurrencyConverter" class="cryptocurrency-converter">
@@ -77,4 +78,5 @@ function custom_app_form_shortcode( $atts ) {
     </table>
 
 	<?php
+	return ob_get_clean();
 }
